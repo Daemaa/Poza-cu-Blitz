@@ -9,7 +9,8 @@ function on_cam_error(err)
 alert("error."+err.message);
 }
 //-----------------------------------------------
-var constraints = { audio: false, video: true, facingMode: 'environment'};
+const video_const = { facingMode: 'environment' };
+const constraints = { audio: false, video: video_const};
 navigator.mediaDevices.getUserMedia(constraints)
 .then(on_cam_success)
 .catch(on_cam_error);
